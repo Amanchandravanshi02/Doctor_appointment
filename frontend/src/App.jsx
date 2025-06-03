@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Doctors from './pages/Doctors'
@@ -12,6 +13,11 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer' 
 
 const App = () => {
+    useEffect(() => {
+    axios.get('http://localhost:3000')
+      .then(response => console.log(response.data.message))
+      .catch(error => console.error('Error connecting to backend:', error));
+  }, []);
   return (
     <div className='mx-4 sm:mx-[10%]'>
     <Navbar/>

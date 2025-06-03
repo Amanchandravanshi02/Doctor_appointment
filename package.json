@@ -1,0 +1,8 @@
+{
+  "name": "doctor-appointment-fullstack",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node backend/index.js",
+    "build": "cd frontend && npm install && npm run build"
+  }
+}
